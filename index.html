@@ -2,8 +2,19 @@
 <html lang="en">
     <head>
         <title>bk201 - Weekly trending anime</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
-        <p>Automated version of the weekly trending anime (Similar to Anime Trending on Facebook) made using Vue and Firebase</p>
+        <p id="app">
+            {{ message }}
+        </p>
+        <script type="text/javascript">
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Automated version of the weekly trending anime (Similar to Anime Trending on Facebook) made using Vue and Firebase.'
+                }
+            })
+        </script>
     </body>
 </html>
