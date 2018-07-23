@@ -12,12 +12,21 @@
             {{ message }}
         </span>
     </p>
+    <div id="appViewTest">
+        <span v-if="seen">Look at me!</span>
+    </div>
     <script type="text/javascript">
         var app = new Vue({
             el: '#app',
             data: {
                 message: 'Automated version of the weekly trending anime (Similar to Anime Trending on Facebook) made using Vue and Firebase.',
                 messageTitle: 'This is the title!'
+            }
+        })
+        var appViewTest = new Vue({
+            el: '#appViewTest',
+            data: {
+                seen: true
             }
         })
     </script>
