@@ -8,25 +8,32 @@
 
 <body>
     <p id="app">
-        <span v-bind:title="messageTitle">
+        <span v-bind:title="messageTitle" v-if="seen">
             {{ message }}
         </span>
     </p>
-    <div id="appViewTest">
-        <span v-if="seen">Look at me!</span>
-    </div>
+    <ul id="list">
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ul>
     <script type="text/javascript">
         var app = new Vue({
             el: '#app',
             data: {
                 message: 'Automated version of the weekly trending anime (Similar to Anime Trending on Facebook) made using Vue and Firebase.',
-                messageTitle: 'This is the title!'
+                messageTitle: 'This is the title!',
+                seen: true
             }
         })
-        var appViewTest = new Vue({
-            el: '#appViewTest',
+        var list = new Vue({
+            el: '#list',
             data: {
-                seen: true
+                todos: [
+                    { text: 'Full Metal Alchemist' },
+                    { text: 'Dragonball' },
+                    { text: 'Cowboy Bebop' }
+                ]
             }
         })
     </script>
