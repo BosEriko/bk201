@@ -9,7 +9,9 @@
 <body>
     <p id="app">
         <span v-bind:title="messageTitle" v-if="seen">
-            {{ message }}
+            {{ message }} <br />
+            {{ messageLength }} <br />
+            <button v-on:click="messageCount">Count the text!</button>
         </span>
     </p>
     <ul id="list">
@@ -23,7 +25,13 @@
             data: {
                 message: 'Automated version of the weekly trending anime (Similar to Anime Trending on Facebook) made using Vue and Firebase.',
                 messageTitle: 'This is the title!',
+                messageLength: 0,
                 seen: true
+            },
+            methods: {
+                messageCount: function() {
+                    this.messageLength = this.message.length
+                }
             }
         })
         var list = new Vue({
