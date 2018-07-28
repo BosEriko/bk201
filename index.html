@@ -20,6 +20,13 @@
             {{ todo.text }}
         </li>
     </ul>
+    <ol id="waifu-list">
+        <waifu-item
+            v-for="waifu in waifuEntry"
+            v-bind:waifu="waifu"
+            v-bind:key="waifu.id"
+        ></waifu-item>
+    </ol>
     <script type="text/javascript">
         var app = new Vue({
             el: '#app',
@@ -42,6 +49,20 @@
                     { text: 'Full Metal Alchemist' },
                     { text: 'Dragonball' },
                     { text: 'Cowboy Bebop' }
+                ]
+            }
+        })
+        Vue.component('waifu-item', {
+            props: ['waifu'],
+            template: '<li>{{ waifu.text }}</li>'
+        })
+        var waifuList = new Vue({
+            el: '#waifu-list',
+            data: {
+                waifuEntry: [
+                    { id: 0, text: 'Yuko' },
+                    { id: 1, text: 'Sengoku' },
+                    { id: 2, text: 'Hinami' },
                 ]
             }
         })
