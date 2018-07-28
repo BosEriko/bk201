@@ -7,65 +7,9 @@
 </head>
 
 <body>
-    <p id="app">
-        <span v-bind:title="messageTitle" v-if="seen">
-            {{ message }} <br />
-            {{ messageLength }} <br />
-            <button v-on:click="messageCount">Count the text!</button>
-            <input type="text" v-model="message">
-        </span>
-    </p>
-    <ul id="list">
-        <li v-for="todo in todos">
-            {{ todo.text }}
-        </li>
-    </ul>
-    <ol id="waifu-list">
-        <waifu-item
-            v-for="waifu in waifuEntry"
-            v-bind:waifu="waifu"
-            v-bind:key="waifu.id"
-        ></waifu-item>
-    </ol>
+    
     <script type="text/javascript">
-        var app = new Vue({
-            el: '#app',
-            data: {
-                message: 'Automated version of the weekly trending anime (Similar to Anime Trending on Facebook) made using Vue and Firebase.',
-                messageTitle: 'This is the title!',
-                messageLength: 0,
-                seen: true
-            },
-            methods: {
-                messageCount: function() {
-                    this.messageLength = this.message.length
-                }
-            }
-        })
-        var list = new Vue({
-            el: '#list',
-            data: {
-                todos: [
-                    { text: 'Full Metal Alchemist' },
-                    { text: 'Dragonball' },
-                    { text: 'Cowboy Bebop' }
-                ]
-            }
-        })
-        Vue.component('waifu-item', {
-            props: ['waifu'],
-            template: '<li>{{ waifu.text }}</li>'
-        })
-        var waifuList = new Vue({
-            el: '#waifu-list',
-            data: {
-                waifuEntry: [
-                    { id: 0, text: 'Yuko' },
-                    { id: 1, text: 'Sengoku' },
-                    { id: 2, text: 'Hinami' },
-                ]
-            }
-        })
+        // Vue Scripts go here
     </script>
 </body>
 
