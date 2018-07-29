@@ -7,9 +7,92 @@
 </head>
 
 <body>
-    
+    <div id="printData">
+        {{ message }}
+    </div>
+
+    <div id="bindTitle">
+        <span v-bind:title="messageTitle">
+            {{ message }}
+        </span>
+    </div>
+
+    <div id="visibilityToggle">
+        <span v-if="seen">Toggle my visibility on the console</span>
+    </div>
+
+    <div id="printList">
+        <ol>
+            <li v-for="item in list">
+                {{ item.title }}
+            </li>
+        </ol>
+    </div>
+
+    <div id="userInput">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse the Message</button>
+    </div>
+
+    <div id="bindData">
+        <p>{{ message }}</p>
+        <input type="text" v-model="message">
+    </div>
+
     <script type="text/javascript">
-        // Vue Scripts go here
+        // Print Data
+        var printData = new Vue({
+            el: '#printData',
+            data: {
+                message: 'This is a way to print the data.'
+            }
+        })
+        // Bind Title
+        var bindTitle = new Vue({
+            el: '#bindTitle',
+            data: {
+                message: 'This is a way to bind a data to the title attribute.',
+                messageTitle: 'This is a binded title using Vue.'
+            }
+        })
+        // Visibility Toggle
+        var visibilityToggle = new Vue({
+            el: '#visibilityToggle',
+            data: {
+                seen: true
+            }
+        })
+        // Print List
+        var printList = new Vue({
+            el: '#printList',
+            data: {
+                list: [
+                    { title: 'Kuroneko' },
+                    { title: 'Sengoku Nadeko' },
+                    { title: 'Rem' },
+                ]
+            }
+        })
+        // User Input
+        var userInput = new Vue({
+            el: '#userInput',
+            data: {
+                message: 'This is for user input.'
+            },
+            methods: {
+                reverseMessage: function() {
+                    this.message = this.message.split('').reverse().join('')
+                }
+            }
+        })
+        // Bind Data
+        var bindData = new Vue({
+            el: '#bindData',
+            data: {
+                message: 'This is a way to bind data.'
+            }
+        })
+
     </script>
 </body>
 
