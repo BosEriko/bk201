@@ -10,7 +10,7 @@
 <body>
     <ul id="animeData">
         <li v-for="entry in animeEntry.data.data">
-            {{ entry.attributes.titles.en_jp }}
+            <img v-bind:src="entry.attributes.posterImage.small" v-bind:alt="entry.attributes.titles.en_jp" />
         </li>
     </ul>
 
@@ -26,7 +26,7 @@
             mounted () {
                 // https://kitsu.io/api/edge/anime?filter[genres]=adventure
                 axios
-                    .get('https://kitsu.io/api/edge/anime?filter[genres]=adventure')
+                    .get('https://kitsu.io/api/edge/anime?filter[text]=death')
                     .then(response => (this.animeEntry = response))
             }
         })
