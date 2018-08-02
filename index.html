@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   <title>bk201 - Weekly trending anime</title>
+    <title>bk201 - Weekly trending anime</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 </head>
@@ -10,7 +10,7 @@
 <body>
     <ul id="animeData">
         <li v-for="entry in animeEntry.data.data">
-            <img v-bind:src="entry.attributes.posterImage.small" v-bind:alt="entry.attributes.titles.en_jp" />
+            <img v-bind:src="entry.attributes.posterImage.small" v-bind:alt="entry.attributes.titles.en_jp" v-bind:title="entry.attributes.titles.en_jp"/>
         </li>
     </ul>
 
@@ -18,13 +18,12 @@
         // Vue Script Goes Here
         var animeData = new Vue({
             el: '#animeData',
-            data () {
+            data() {
                 return ({
                     animeEntry: null
                 })
             },
-            mounted () {
-                // https://kitsu.io/api/edge/anime?filter[genres]=adventure
+            mounted() {
                 axios
                     .get('https://kitsu.io/api/edge/anime?filter[text]=death')
                     .then(response => (this.animeEntry = response))
