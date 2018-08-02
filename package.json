@@ -1,0 +1,19 @@
+{
+  "name": "bk201",
+  "version": "1.0.0",
+  "description": "Automated version of the weekly trending anime (Similar to Anime Trending on Facebook) made using Vue and Firebase.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BosEriko/bk201.git"
+  },
+  "author": "Bos Eriko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BosEriko/bk201/issues"
+  },
+  "homepage": "https://github.com/BosEriko/bk201#readme"
+}
