@@ -8,3 +8,4 @@ Automated version of the weekly trending anime (Similar to Anime Trending on Fac
 - https://firebase.google.com/docs/
 - https://webpack.js.org/concepts/
 - https://tailwindcss.com/docs/installation
+- https://github.com/VincentGarreau/particles.js/

@@ -6,16 +6,18 @@
     <!-- Development Vue. Change in production -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
-    <script src="./particles.min.js"></script>
+    <script src="./assets/particles.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="bg-indigo m-0 p-0" id="particles-js">
+<body class="bg-black m-0 p-0">
+    <div id="particles-js"></div>
     <header id="animeSearch" class="bg-white py-3 shadow mb-3 pin-x pin-t fixed">
         <div class="container mx-auto">
             <div class="flex">
-                <input type="text" v-model="decodeURI(searchQuery)" placeholder="Input Text Keyword" class="flex-1 bg-grey-lighter focus:bg-white hover:shadow-md focus:shadow-md rounded p-5" />
+                <input type="text" v-model="decodeURI(searchQuery)" placeholder="Input Text Keyword" class="flex-1 bg-grey-lighter focus:bg-white hover:shadow-md focus:shadow-md rounded p-5"
+                />
                 <button class="ml-3 p-5 bg-green rounded hover:shadow-md text-white hover:bg-green-light" v-on:click="searchRun">Submit</button>
             </div>
         </div>
@@ -28,7 +30,6 @@
             </li>
         </ul>
     </div>
-
     <script type="text/javascript">
         var defaultSearch = encodeURI('Attack on Titan')
         var animeSearch = new Vue({
@@ -59,7 +60,7 @@
                     .then(response => (this.animeEntry = response))
             }
         })
-        particlesJS.load('particles-js', 'assets/particles.json', function() {
+        particlesJS.load('particles-js', 'assets/particles.json', function () {
             console.log('callback - particles.js config loaded');
         });
     </script>
