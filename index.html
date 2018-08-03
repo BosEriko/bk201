@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="bg-indigo">
-    <header id="animeSearch">
+<body class="bg-indigo m-0 p-0">
+    <header id="animeSearch" class="bg-white py-3 shadow mb-3 pin-x pin-t fixed">
         <div class="container mx-auto">
-            <div class="flex my-3">
-                <input type="text" v-model="decodeURI(searchQuery)" placeholder="Input Text Keyword" class="flex-1 bg-grey-lighter focus:bg-white shadow-md rounded p-5" />
-                <button class="ml-3 p-5 bg-green rounded shadow-md text-white hover:bg-green-light" v-on:click="searchRun">Submit</button>
+            <div class="flex">
+                <input type="text" v-model="decodeURI(searchQuery)" placeholder="Input Text Keyword" class="flex-1 bg-grey-lighter focus:bg-white hover:shadow-md focus:shadow-md rounded p-5" />
+                <button class="ml-3 p-5 bg-green rounded hover:shadow-md text-white hover:bg-green-light" v-on:click="searchRun">Submit</button>
             </div>
         </div>
     </header>
     <div class="container mx-auto">
-        <ul id="animeData" class="list-reset">
+        <ul id="animeData" class="list-reset mt-20 pt-5">
             <li v-for="entry in animeEntry.data.data" class="inline-block m-1">
                 <img v-bind:src="entry.attributes.posterImage.small" v-bind:alt="entry.attributes.titles.en_jp" v-bind:title="entry.attributes.titles.en_jp"
                     class="align-bottom" />
