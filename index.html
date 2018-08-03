@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
-    <ul id="animeData">
-        <li v-for="entry in animeEntry.data.data">
-            <img
-                v-bind:src="entry.attributes.posterImage.small"
-                v-bind:alt="entry.attributes.titles.en_jp"
-                v-bind:title="entry.attributes.titles.en_jp"
-            />
-        </li>
-    </ul>
+<body class="bg-indigo">
+    <div class="container mx-auto">
+        <div id="animeSearch">
+            <input type="text" placeholder="Keyword" class="bg-grey-dark text-white focus:text-black focus:bg-white shadow-md rounded p-5 my-3 mx-auto block w-full" />
+        </div>
+        <ul id="animeData" class="list-reset">
+            <li v-for="entry in animeEntry.data.data" class="inline-block m-1">
+                <img v-bind:src="entry.attributes.posterImage.small" v-bind:alt="entry.attributes.titles.en_jp" v-bind:title="entry.attributes.titles.en_jp" class="align-bottom" />
+            </li>
+        </ul>
+    </div>
 
     <script type="text/javascript">
         var animeData = new Vue({
