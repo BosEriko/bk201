@@ -6,11 +6,12 @@
     <!-- Development Vue. Change in production -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script src="./particles.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="bg-indigo m-0 p-0">
+<body class="bg-indigo m-0 p-0" id="particles-js">
     <header id="animeSearch" class="bg-white py-3 shadow mb-3 pin-x pin-t fixed">
         <div class="container mx-auto">
             <div class="flex">
@@ -58,6 +59,9 @@
                     .then(response => (this.animeEntry = response))
             }
         })
+        particlesJS.load('particles-js', 'assets/particles.json', function() {
+            console.log('callback - particles.js config loaded');
+        });
     </script>
 </body>
 
