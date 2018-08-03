@@ -5,17 +5,21 @@
     <title>bk201 - Weekly trending anime</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <ul id="animeData">
         <li v-for="entry in animeEntry.data.data">
-            <img v-bind:src="entry.attributes.posterImage.small" v-bind:alt="entry.attributes.titles.en_jp" v-bind:title="entry.attributes.titles.en_jp"/>
+            <img
+                v-bind:src="entry.attributes.posterImage.small"
+                v-bind:alt="entry.attributes.titles.en_jp"
+                v-bind:title="entry.attributes.titles.en_jp"
+            />
         </li>
     </ul>
 
     <script type="text/javascript">
-        // Vue Script Goes Here
         var animeData = new Vue({
             el: '#animeData',
             data() {

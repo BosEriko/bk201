@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+#animeData {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+#animeData li {
+    margin: 10px;
+    padding: 0;
+    display: inline-block;
+}
